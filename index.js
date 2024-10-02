@@ -1,45 +1,3 @@
-let notes = [
-  {
-    id: "1",
-    content: "HTML is easy",
-    important: true,
-  },
-  {
-    id: "2",
-    content: "Browser can execute only JavaScript",
-    important: false,
-  },
-  {
-    id: "3",
-    content: "GET and POST are the most important methods of HTTP protocol",
-    important: false,
-  },
-  {
-    id: "4",
-    content: "Hii, Deep here",
-    important: false,
-  },
-  {
-    id: "5",
-    content: "I am learning to code",
-    important: true,
-  },
-  {
-    id: "6",
-    content: "Jiya is pretty",
-    important: true,
-  },
-  {
-    id: "7",
-    content: "Doing this",
-    important: false,
-  },
-  {
-    id: "8",
-    content: "hello again",
-    important: false,
-  },
-];
 const cors = require("cors");
 const express = require("express");
 const app = express();
@@ -92,8 +50,6 @@ app.put("/notes/:id", (req, res) => {
   const new_notes = notes.map((note) =>
     note.id == id ? { ...note, important: !note.important } : note
   );
-  console.log(new_notes);
-  notes = new_notes;
   res.send(new_notes);
 });
 
