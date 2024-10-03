@@ -43,9 +43,11 @@ let notes = [
 const cors = require("cors");
 const express = require("express");
 const app = express();
+
+app.use(express.static("dist"));
 app.use(express.json());
 app.use(cors());
-const allowed_domain = "http://localhost:5173";
+const allowed_domain = "http://localhost:3001";
 app.use(
   cors({
     origin: allowed_domain,
